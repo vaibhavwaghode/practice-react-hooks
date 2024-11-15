@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 // import Button from '@mui/material/Button'
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.css';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 // import UseStateHook from './component/useStateHook';
 // import UseEffectHook from './component/useEffectHook';
 // import {UseRefHook} from './component/useRefHook';
@@ -10,26 +10,29 @@ import { useEffect } from 'react';
 // import UseMemoHook from './component/UseMemoHook';
 // import Card from './component/card';
 // import UseCallbackHook from './component/UseCallbackHook';
-import Profile from './component/profile';
+// import Profile from './component/profile';
 // import Footer from './component/Footer';
 // import {useState} from 'react';
 // import { useReducer } from 'react';
 // import { useSelector, useDispatch } from 'react-redux';
 // import { increment, decrement, input } from './slice/counterSlice';
 // import { useEffect, useLayoutEffect } from 'react';
+import ButtonClick from './component/HOC/ButtonClick';
+import ButtonHover from './component/HOC/ButtonHover';
+
 
 function App() {
 
 
-  const [name,setName] = useState(
-    localStorage.getItem('username')?localStorage.getItem('username'):" "
-  );
+  // const [name,setName] = useState(
+  //   localStorage.getItem('username')?localStorage.getItem('username'):" "
+  // );
 
 
-  useEffect(()=>{
-    localStorage.setItem('username',name);
-    console.log(localStorage.getItem('username'));
-  },[])
+  // useEffect(()=>{
+  //   localStorage.setItem('username',name);
+  //   console.log(localStorage.getItem('username'));
+  // },[])
 
 
 
@@ -100,14 +103,17 @@ function App() {
         <li key={index}>{Math.pow(Math.random(),10)}</li>
       ))} */}
       {/* <UseEffectHook/> */}
-      <Profile/>
-      <input type='text' value={name} placeholder='Enter you user name' onChange={(e)=>setName(e.target.value)}/>
+      {/* <Profile/> */}
+      {/* <input type='text' value={name} placeholder='Enter you user name' onChange={(e)=>setName(e.target.value)}/>
 
-      <h1>Hello, {name}!</h1>
+      <h1>Hello, {name}!</h1> */}
 
 
-      <h1>HOC Example</h1>
-      <button>Click Me</button>
+
+      <div className='HOC'>
+              <ButtonClick />
+              <ButtonHover />
+      </div>
     </div>
   );
 }
